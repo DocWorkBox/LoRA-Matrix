@@ -23,7 +23,7 @@
 | 平台 | 要求 | 当前状态 |
 | --- | --- | --- |
 | macOS | Apple Silicon（M1 及更新芯片） | 提供单个 DMG |
-| Windows | Windows 10/11 x64 | 正在重新打包 |
+| Windows | Windows 10/11 x64 | 已提供 Portable EXE |
 
 > LoRA Matrix 不内置 ComfyUI、模型或自定义节点。使用前请先启动自己的本地或远程 ComfyUI。
 
