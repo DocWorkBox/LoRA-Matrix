@@ -21,19 +21,29 @@
 
 ## 下载与安装
 
-当前正式版本：**[v0.2.2](https://github.com/DocWorkBox/LoRA-Matrix/releases/tag/v0.2.2)**。后续更新可在[最新正式版页面](https://github.com/DocWorkBox/LoRA-Matrix/releases/latest)查看。
+当前正式版本：**[v0.2.3](https://github.com/DocWorkBox/LoRA-Matrix/releases/tag/v0.2.3)**。后续更新可在[最新正式版页面](https://github.com/DocWorkBox/LoRA-Matrix/releases/latest)查看。
 
 | 平台 | 下载文件 | 使用方式 |
 | --- | --- | --- |
-| Windows 10 / 11 x64 | [LoRA-Matrix-0.2.2.exe](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.2/LoRA-Matrix-0.2.2.exe) | 便携版，下载后直接运行 |
-| macOS Apple Silicon（M1 及更新芯片） | [LoRA-Matrix-0.2.2.dmg](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.2/LoRA-Matrix-0.2.2.dmg) | 打开 DMG，将应用拖入“应用程序” |
+| Windows 10 / 11 x64 | [LoRA-Matrix-0.2.3.exe](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.3/LoRA-Matrix-0.2.3.exe) | 便携版，下载后直接运行 |
+| macOS Apple Silicon（M1 及更新芯片） | [LoRA-Matrix-0.2.3.dmg](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.3/LoRA-Matrix-0.2.3.dmg) | 打开 DMG，将应用拖入“应用程序” |
 
-- **GitHub Releases**：[查看版本说明与安装包](https://github.com/DocWorkBox/LoRA-Matrix/releases)。[SHA256SUMS.txt](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.2/SHA256SUMS.txt) 提供本版安装包的完整性校验值。
+- **GitHub Releases**：[查看版本说明与安装包](https://github.com/DocWorkBox/LoRA-Matrix/releases)。[SHA256SUMS.txt](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.3/SHA256SUMS.txt) 提供本版安装包的完整性校验值。
 - **夸克网盘**：[打开分享页下载](https://pan.quark.cn/s/7ce9f891c838)。网盘中的版本以实际文件为准。
 
 macOS 安装包尚未使用 Apple Developer ID 签名或公证。如系统阻止打开，请先确认下载来源和文件完整性，再按系统提示在“系统设置 → 隐私与安全性”中允许该应用打开；无需关闭系统的全局安全保护。
 
 > 软件不附带 ComfyUI、模型、自定义节点或算力。你需要准备可用的本地／远程 ComfyUI，或自己的 RunningHub 账号、API Key 与额度。
+
+## 0.2.3 更新
+
+- 新增 **FLUX.3 Image Klein Base、原生 16 步蒸馏版**，均提供文生图与参考编辑模式。
+- 新增 **MOSS-Image SFT / Base** 文生图及 Ostris 实验编辑入口；四种模式优先使用 **W4A8 GPTQ 编码器 + small VAE**，保留兼容文件回退和手动选择。
+- **Qwen Image 2.1 / Turbo、FLUX.3 Base / 蒸馏编辑**支持最多 **10 张参考图**，保留上传顺序并拦截超出上限的输入。
+- 更新模型文件自动匹配与 RunningHub 收藏规则，区分 Base、蒸馏模型及官方新旧文件名。
+- 增补 Qwen、FLUX.3 与 FastH3 的真实 LoRA 对照记录。MOSS SFT / Base 已在 Windows 本地完成原模型出图与图片检查；MOSS 编辑、真实 LoRA 等仍需独立验收。
+
+完整更新与验证范围见 [v0.2.3 发布说明](https://github.com/DocWorkBox/LoRA-Matrix/releases/tag/v0.2.3)。
 
 ## 0.2.2 更新
 
@@ -89,14 +99,14 @@ macOS 安装包尚未使用 Apple Developer ID 签名或公证。如系统阻止
 
 ## 模型与模式
 
-v0.2.2 内置 **43 个模型与模式配置**，包括同一系列的不同版本与运行模式。
+v0.2.3 内置 **51 个模型与模式配置**，包括同一系列的不同版本与运行模式。
 
 | 类别 | 数量 | 范围 |
 | --- | --- | --- |
-| 图像生成 | 19 | FLUX.1 / FLUX.2、SD 1.5、SDXL、Chroma、Qwen-Image / 2512 / 2.1 / 2.1 Turbo、Anima、Z-Image / Turbo、FLUX.2 Klein Base / Turbo、Boogu Image、Krea 2 Raw / Turbo |
-| 图像编辑 | 8 | FLUX.1 Kontext、Qwen-Image-Edit / 2509 / 2511、Qwen Image 2.1 / 2.1 Turbo Edit、FireRed-Image-Edit-1.1、Boogu Image Edit |
+| 图像生成 | 23 | FLUX.1 / FLUX.2 / FLUX.3 Image Klein Base 与 16 步蒸馏、MOSS-Image SFT / Base、SD 1.5、SDXL、Chroma、Qwen-Image / 2512 / 2.1 / 2.1 Turbo、Anima、Z-Image / Turbo、FLUX.2 Klein Base / Turbo、Boogu Image、Krea 2 Raw / Turbo |
+| 图像编辑 | 10 | FLUX.1 Kontext、Qwen-Image-Edit / 2509 / 2511、Qwen Image 2.1 / 2.1 Turbo Edit、FLUX.3 Image Klein Base / 蒸馏 Edit、FireRed-Image-Edit-1.1、Boogu Image Edit |
 | 视频与音视频 | 13 | FastH3 8-Step V2、Wan 2.1 / 2.2、LTX-2 / 2.3 / 2.5、MiniMax H3 首尾帧与多参考模式 |
-| 实验模式 | 3 | Ideogram4、Krea 2 Raw Edit、Krea 2 Turbo Edit |
+| 实验模式 | 5 | MOSS-Image SFT / Base Ostris Edit、Ideogram4、Krea 2 Raw Edit、Krea 2 Turbo Edit |
 
 [查看官网模型介绍](https://matrix.doxora.work/#models)
 
@@ -104,6 +114,8 @@ v0.2.2 内置 **43 个模型与模式配置**，包括同一系列的不同版�
 
 ## 使用前了解
 
+- **MOSS 编辑需要额外的 Ostris 插件节点。** 模型文件齐全仍需后端节点支持；文生图默认组合的验证不能替代编辑与真实 LoRA 验收。
+- **Qwen 2.1 与 FLUX.3 编辑最多 10 张参考图。** 参考数量支持不保证复杂多主体排列、颜色或细节严格保真。
 - **H3 多参考模式至少需要一份素材。** 最多 9 张图片、3 段视频、3 段独立音频，合计最多 12 个文件；本地 ComfyUI 使用视频参考时需要 VideoHelperSuite。
 - **视频需要主动保存。** 视频目前通过流式代理播放，不是永久本地缓存；需要长期保留时，请下载原文件。
 - **视频有没有声音取决于模型和生成结果。** 矩阵同步播放不保证逐帧锁定；PNG 对比画布仅用于图片结果。
