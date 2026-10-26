@@ -21,19 +21,27 @@
 
 ## 下载与安装
 
-当前正式版本：**[v0.2.3](https://github.com/DocWorkBox/LoRA-Matrix/releases/tag/v0.2.3)**。后续更新可在[最新正式版页面](https://github.com/DocWorkBox/LoRA-Matrix/releases/latest)查看。
+当前正式版本：**[v0.2.4](https://github.com/DocWorkBox/LoRA-Matrix/releases/tag/v0.2.4)**。后续更新可在[最新正式版页面](https://github.com/DocWorkBox/LoRA-Matrix/releases/latest)查看。
 
 | 平台 | 下载文件 | 使用方式 |
 | --- | --- | --- |
-| Windows 10 / 11 x64 | [LoRA-Matrix-0.2.3.exe](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.3/LoRA-Matrix-0.2.3.exe) | 便携版，下载后直接运行 |
-| macOS Apple Silicon（M1 及更新芯片） | [LoRA-Matrix-0.2.3.dmg](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.3/LoRA-Matrix-0.2.3.dmg) | 打开 DMG，将应用拖入“应用程序” |
+| Windows 10 / 11 x64 | [LoRA-Matrix-0.2.4.exe](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.4/LoRA-Matrix-0.2.4.exe) | 便携版，下载后直接运行 |
+| macOS Apple Silicon（M1 及更新芯片） | [LoRA-Matrix-0.2.4.dmg](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.4/LoRA-Matrix-0.2.4.dmg) | 打开 DMG，将应用拖入“应用程序” |
 
-- **GitHub Releases**：[查看版本说明与安装包](https://github.com/DocWorkBox/LoRA-Matrix/releases)。[SHA256SUMS.txt](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.3/SHA256SUMS.txt) 提供本版安装包的完整性校验值。
+- **GitHub Releases**：[查看版本说明与安装包](https://github.com/DocWorkBox/LoRA-Matrix/releases)。[SHA256SUMS.txt](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.4/SHA256SUMS.txt) 提供本版安装包的完整性校验值。
 - **夸克网盘**：[打开分享页下载](https://pan.quark.cn/s/7ce9f891c838)。网盘中的版本以实际文件为准。
 
 macOS 安装包尚未使用 Apple Developer ID 签名或公证。如系统阻止打开，请先确认下载来源和文件完整性，再按系统提示在“系统设置 → 隐私与安全性”中允许该应用打开；无需关闭系统的全局安全保护。
 
 > 软件不附带 ComfyUI、模型、自定义节点或算力。你需要准备可用的本地／远程 ComfyUI，或自己的 RunningHub 账号、API Key 与额度。
+
+## 0.2.4 更新
+
+- **复用历史测试配置**：在历史记录删除按钮旁点击“复用”，恢复模型、全部提示词、LoRA、采样组合、种子和参考素材等参数，编辑后再运行。
+- **ZIP 参数说明**：下载结果 ZIP 时附带 `测试配置.txt`，保存所有提示词、模型及采样参数、种子和逐项文件对应关系。
+- **最多 8 组种子**：添加、随机生成或删除种子，每组均展开全部提示词、LoRA 强度与采样组合；矩阵和导出画布按种子区分，旧单种子历史继续兼容。
+
+本地 679 项自动测试通过，本次两端安装包的 6 个共用运行文件逐字节一致。完整验证范围与待验项见 [v0.2.4 发布说明](https://github.com/DocWorkBox/LoRA-Matrix/releases/tag/v0.2.4)。
 
 ## 0.2.3 更新
 
@@ -80,8 +88,8 @@ macOS 安装包尚未使用 Apple Developer ID 签名或公证。如系统阻止
 - 连接本地／远程 ComfyUI，或 RunningHub 国内站／国际站。RunningHub 提供 24G、48G Plus 与 Ultra 84G 选项。
 - 扫描节点和模型，自动匹配主模型、VAE 与文本编码器；匹配不到时可以手动选择，缺少的资源会提示出来。
 - 不同连接分别保存输入和并发设置；支持任务取消、完成通知与历史单条删除。
-- 运行历史保存在本机，图片提供本地缓存；可以重新打开已有任务继续比较。
-- 图片和视频都能下载原文件或打包 ZIP；图片矩阵还可以导出**自适应比例的 PNG 对比画布**。
+- 运行历史保存在本机，图片提供本地缓存；可以重新打开已有任务继续比较，或一键复用全部测试配置。
+- 图片和视频都能下载原文件或打包 ZIP，ZIP 附带完整测试参数 TXT；图片矩阵还可以导出**自适应比例的 PNG 对比画布**。
 - 石墨青柠夜间模式与云白钴蓝日间模式记住上次选择，切换时不清空输入或历史，也不改变图片、视频的颜色。
 
 ## 四步开始
@@ -93,13 +101,13 @@ macOS 安装包尚未使用 Apple Developer ID 签名或公证。如系统阻止
 | 01 模型 | 选择与 LoRA 匹配的模型，检查主模型、VAE、编码器等文件 |
 | 02 提示词 | 写好提示词，按需要加入参考图片、视频或音频 |
 | 03 LoRA | 选择要测试的 LoRA，设置强度范围，按需加入原模型对照或加速 LoRA |
-| 04 采样 | 确认种子、步数、输出规格及采样方式，开始测试 |
+| 04 采样 | 设置 1–8 组种子，确认步数、输出规格及采样方式，开始测试 |
 
 先用一个 LoRA、几个强度跑一轮。确认设置与结果后，再扩大测试范围。
 
 ## 模型与模式
 
-v0.2.3 内置 **51 个模型与模式配置**，包括同一系列的不同版本与运行模式。
+v0.2.4 内置 **51 个模型与模式配置**，包括同一系列的不同版本与运行模式。
 
 | 类别 | 数量 | 范围 |
 | --- | --- | --- |
