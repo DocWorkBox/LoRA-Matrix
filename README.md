@@ -21,19 +21,28 @@
 
 ## 下载与安装
 
-当前正式版本：**[v0.2.4](https://github.com/DocWorkBox/LoRA-Matrix/releases/tag/v0.2.4)**。后续更新可在[最新正式版页面](https://github.com/DocWorkBox/LoRA-Matrix/releases/latest)查看。
+当前正式版本：**[v0.3.0](https://github.com/DocWorkBox/LoRA-Matrix/releases/tag/v0.3.0)**。后续更新可在[最新正式版页面](https://github.com/DocWorkBox/LoRA-Matrix/releases/latest)查看。
 
 | 平台 | 下载文件 | 使用方式 |
 | --- | --- | --- |
-| Windows 10 / 11 x64 | [LoRA-Matrix-0.2.4.exe](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.4/LoRA-Matrix-0.2.4.exe) | 便携版，下载后直接运行 |
-| macOS Apple Silicon（M1 及更新芯片） | [LoRA-Matrix-0.2.4.dmg](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.4/LoRA-Matrix-0.2.4.dmg) | 打开 DMG，将应用拖入“应用程序” |
+| Windows 10 / 11 x64 | [LoRA Matrix 0.3.0.exe](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.3.0/LoRA-Matrix-0.3.0.exe) | 便携版，下载后直接运行 |
+| macOS Apple Silicon（M1 及更新芯片） | [LoRA Matrix 0.3.0.dmg](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.3.0/LoRA-Matrix-0.3.0.dmg) | 打开 DMG，将应用拖入“应用程序” |
 
-- **GitHub Releases**：[查看版本说明与安装包](https://github.com/DocWorkBox/LoRA-Matrix/releases)。[SHA256SUMS.txt](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.2.4/SHA256SUMS.txt) 提供本版安装包的完整性校验值。
+- **GitHub Releases**：[查看版本说明与安装包](https://github.com/DocWorkBox/LoRA-Matrix/releases)。[SHA256SUMS.txt](https://github.com/DocWorkBox/LoRA-Matrix/releases/download/v0.3.0/SHA256SUMS.txt) 提供本版安装包的完整性校验值。
 - **夸克网盘**：[打开分享页下载](https://pan.quark.cn/s/7ce9f891c838)。网盘中的版本以实际文件为准。
 
 macOS 安装包尚未使用 Apple Developer ID 签名或公证。如系统阻止打开，请先确认下载来源和文件完整性，再按系统提示在“系统设置 → 隐私与安全性”中允许该应用打开；无需关闭系统的全局安全保护。
 
 > 软件不附带 ComfyUI、模型、自定义节点或算力。你需要准备可用的本地／远程 ComfyUI，或自己的 RunningHub 账号、API Key 与额度。
+
+## 0.3.0 更新
+
+- **半星评分与筛选**：为结果打分，按指定星级或以上筛选。
+- **自定义矩阵轴**：选择 X/Y 轴字段并按当前布局和筛选导出画布。
+- **图片与视频竞技场**：在相同提示条件下盲选结果，完成比较后查看偏好。
+- **更多测试配置**：LoRA 上限提高到 30，支持按提示词组隔离参考素材，新增 FastH3 Omni，并支持展开配置与重命名历史测试。
+
+完整更新与验证范围见 [v0.3.0 发布说明](https://github.com/DocWorkBox/LoRA-Matrix/releases/tag/v0.3.0)。
 
 ## 0.2.4 更新
 
@@ -67,7 +76,7 @@ macOS 安装包尚未使用 Apple Developer ID 签名或公证。如系统阻止
 
 ### 图片和视频，都能并排比较
 
-- 一次设置 **1–9 个对比项**，可以选择 LoRA 或原模型基准，再按起始、结束和步进值生成强度矩阵。
+- 一次设置 **最多 30 个 LoRA 对比项**，可以选择 LoRA 或原模型基准，再按起始、结束和步进值生成强度矩阵。
 - 固定提示词、种子、尺寸和采样参数，减少比较时的干扰变量。
 - 调整结果预览大小，自动适应画布，或收起配置面板，把空间留给结果。
 - 视频可以单条播放、从头同步播放、全部暂停；打开详情后听声音、看细节。
@@ -107,7 +116,7 @@ macOS 安装包尚未使用 Apple Developer ID 签名或公证。如系统阻止
 
 ## 模型与模式
 
-v0.2.4 内置 **51 个模型与模式配置**，包括同一系列的不同版本与运行模式。
+以下为 v0.2.4 的模型与模式配置基线；v0.3.0 新增 FastH3 Omni。包括同一系列的不同版本与运行模式。
 
 | 类别 | 数量 | 范围 |
 | --- | --- | --- |
